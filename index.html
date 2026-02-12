@@ -227,7 +227,7 @@
                 <div class="source">
                     📎 <a href="https://www.boatos.org/politica/pesquisa-eleitoral-mostra-vitoria-esmagadora-de-flavio-bolsonaro-com-73-dos-votos-contra-lula.html" target="_blank">Boatos.org — Pesquisa de 73%</a>
                 </div>
-                <a href="#" class="whatsapp-btn">💬 Copiar para WhatsApp</a>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(0)">💬 Copiar para WhatsApp</button>
             </div>
 
             <div class="fact-check">
@@ -240,7 +240,7 @@
                 <div class="source">
                     📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-fugiu-do-brasil-para-nao-ser-preso-em-operacao-da-pf.html" target="_blank">Boatos.org — Fuga para Europa</a>
                 </div>
-                <a href="#" class="whatsapp-btn">💬 Copiar para WhatsApp</a>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(1)">💬 Copiar para WhatsApp</button>
             </div>
 
             <div class="fact-check">
@@ -253,7 +253,7 @@
                 <div class="source">
                     📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-foi-flagrado-fumando-maconha-em-desfile-na-sapucai.html" target="_blank">Boatos.org — Maconha Sapucaí</a>
                 </div>
-                <a href="#" class="whatsapp-btn">💬 Copiar para WhatsApp</a>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(2)">💬 Copiar para WhatsApp</button>
             </div>
 
             <div class="fact-check">
@@ -266,7 +266,7 @@
                 <div class="source">
                     📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-camiseta-nordestinos.html" target="_blank">Boatos.org — Camiseta nordestinos</a>
                 </div>
-                <a href="#" class="whatsapp-btn">💬 Copiar para WhatsApp</a>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(3)">💬 Copiar para WhatsApp</button>
             </div>
 
             <div class="fact-check">
@@ -279,7 +279,7 @@
                 <div class="source">
                     📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-pai-filho-gay.html" target="_blank">Boatos.org — Pai e filho gay</a>
                 </div>
-                <a href="#" class="whatsapp-btn">💬 Copiar para WhatsApp</a>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(4)">💬 Copiar para WhatsApp</button>
             </div>
         </section>
 
@@ -333,5 +333,60 @@
         <p>Um serviço público de sátira política</p>
         <p style="margin-top: 20px; font-size: 0.9em;">⚠️ <strong>Aviso legal:</strong> Este site é uma obra de sátira política. Informações factuais baseadas em Boatos.org e fact-checkers brasileiros credíveis.</p>
     </footer>
+
+    <script>
+        function copyToWhatsApp(index) {
+            const factChecks = [
+                {
+                    claim: "Pesquisa eleitoral mostra vitória esmagadora de Flávio Bolsonaro com 73% dos votos contra Lula",
+                    reality: "Os números citados provêm de uma enquete do Instagram sem valor científico. As pesquisas registradas pelos principais institutos mostram Lula à frente.",
+                    source: "https://www.boatos.org/politica/pesquisa-eleitoral-mostra-vitoria-esmagadora-de-flavio-bolsonaro-com-73-dos-votos-contra-lula.html"
+                },
+                {
+                    claim: "Flávio Bolsonaro fugiu para a Europa para evitar prisão na PF",
+                    reality: "Não há indícios de que ele 'fugiu' — viagens ao exterior durante recesso parlamentar são normais. As publicações usam linguagem alarmista sem base factual.",
+                    source: "https://www.boatos.org/politica/flavio-bolsonaro-fugiu-do-brasil-para-nao-ser-preso-em-operacao-da-pf.html"
+                },
+                {
+                    claim: "Flávio Bolsonaro foi flagrado fumando maconha no desfile da Sapucaí",
+                    reality: "Vídeo que circulava não mostra Flávio fumando maconha. A alegação surgiu com linguagem sensacionalista e sem fonte credível.",
+                    source: "https://www.boatos.org/politica/flavio-bolsonaro-foi-flagrado-fumando-maconha-em-desfile-na-sapucai.html"
+                },
+                {
+                    claim: "Flávio Bolsonaro foi visto com camiseta xingando nordestinos",
+                    reality: "Sem comprovação autêntica de que ele usou tal camiseta. Imagem foi usada para inflamar sentimentos regionais em período eleitoral.",
+                    source: "https://www.boatos.org/politica/flavio-bolsonaro-camiseta-nordestinos.html"
+                },
+                {
+                    claim: "Flávio Bolsonaro disse que pai pode tirar vida de filho gay",
+                    reality: "Sem fonte confiável que confirme essa declaração. Circulou em meme, mas nunca foi comprovada por jornais ou instituições credíveis.",
+                    source: "https://www.boatos.org/politica/flavio-bolsonaro-pai-filho-gay.html"
+                }
+            ];
+
+            const fact = factChecks[index];
+            const text = `🔍 FACT-CHECK — ${fact.claim}\n\n✅ REALIDADE: ${fact.reality}\n\n📎 FONTE: ${fact.source}\n\n🇧🇷 via Mentirómetro do Flávio — Boatos.org`;
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = '✅ Copiado! Pronto pro WhatsApp';
+                btn.style.background = '#20ba5e';
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '#25D366';
+                }, 2000);
+
+                // Open WhatsApp Web
+                setTimeout(() => {
+                    window.open('https://web.whatsapp.com/', '_blank');
+                }, 500);
+            }).catch(() => {
+                alert('Erro ao copiar. Tente novamente.');
+            });
+        }
+    </script>
 </body>
 </html>
