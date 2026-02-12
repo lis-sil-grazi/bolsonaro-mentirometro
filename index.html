@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentirómetro do Flávio — Fact-Check das Mentiras de Flávio Bolsonaro</title>
+    <title>Mentirómetro do Flávio — Fact-Check de Flávio Bolsonaro</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -155,10 +155,11 @@
             color: white;
             padding: 10px 20px;
             border-radius: 8px;
-            text-decoration: none;
+            border: none;
             font-weight: 600;
             margin-top: 10px;
             transition: background 0.3s;
+            cursor: pointer;
         }
         .whatsapp-btn:hover {
             background: #20ba5e;
@@ -187,7 +188,6 @@
     <nav>
         <ul>
             <li><a href="#fakenews">🔥 Fake News</a></li>
-            <li><a href="#contradictions">🔄 Contradições</a></li>
             <li><a href="#timeline">📅 Timeline</a></li>
             <li><a href="#about">ℹ️ Sobre</a></li>
         </ul>
@@ -195,15 +195,15 @@
 
     <div class="stats">
         <div class="stat-box">
-            <div class="stat-number">5+</div>
+            <div class="stat-number">13+</div>
             <div class="stat-label">Fake News Desmascaradas</div>
         </div>
         <div class="stat-box">
             <div class="stat-number">20+</div>
-            <div class="stat-label">Total em Investigação</div>
+            <div class="stat-label">Total em Boatos.org</div>
         </div>
         <div class="stat-box">
-            <div class="stat-number">2019–2026</div>
+            <div class="stat-number">2016–2026</div>
             <div class="stat-label">Anos de Boataria</div>
         </div>
         <div class="stat-box">
@@ -222,25 +222,38 @@
                 <div class="date">17 de Janeiro, 2026</div>
                 <div class="claim">📊 "Pesquisa eleitoral mostra vitória esmagadora de Flávio Bolsonaro com 73% dos votos contra Lula"</div>
                 <div class="reality">
-                    <strong>✅ Realidade:</strong> Os números citados provêm de uma <strong>enquete do Instagram</strong> sem valor científico. As pesquisas registradas pelos principais institutos (Genial/Quaest, Meio/Ideia, Paraná Pesquisas) mostram <strong>Lula à frente</strong>. Uma pesquisa eleitoral exige metodologia científica, amostra representativa e registro no TSE. Enquetes em perfis de nicho criam "bolhas" — é natural que em perfil simpático ao Bolsonaro ele vença com maioria esmagadora.
+                    <strong>✅ Realidade:</strong> Os números citados provêm de uma <strong>enquete do Instagram</strong> sem valor científico. As pesquisas registradas pelos principais institutos (Genial/Quaest, Meio/Ideia, Paraná Pesquisas) mostram <strong>Lula à frente</strong>. Uma pesquisa eleitoral exige metodologia científica e registro no TSE.
                 </div>
                 <div class="source">
-                    📎 <a href="https://www.boatos.org/politica/pesquisa-eleitoral-mostra-vitoria-esmagadora-de-flavio-bolsonaro-com-73-dos-votos-contra-lula.html" target="_blank">Boatos.org — Pesquisa de 73%</a>
+                    📎 <a href="https://www.boatos.org/politica/pesquisa-eleitoral-mostra-vitoria-esmagadora-de-flavio-bolsonaro-com-73-dos-votos-contra-lula.html" target="_blank">Boatos.org — Pesquisa 73%</a>
                 </div>
                 <button class="whatsapp-btn" onclick="copyToWhatsApp(0)">💬 Copiar para WhatsApp</button>
             </div>
 
             <div class="fact-check">
                 <span class="status-badge false">FALSO</span>
-                <div class="date">20 de Julho, 2025</div>
-                <div class="claim">✈️ "Flávio Bolsonaro fugiu para a Europa para evitar prisão na PF"</div>
+                <div class="date">5 de Dezembro, 2025</div>
+                <div class="claim">📉 "Lula está atrás de Michelle e Flávio Bolsonaro em pesquisa eleitoral"</div>
                 <div class="reality">
-                    <strong>✅ Realidade:</strong> Circularam alegações de que Flávio teria fugido para Portugal para escapar de investigação sobre golpe. <strong>Não há indícios</strong> de que ele "fugiu" — viagens ao exterior durante recesso parlamentar são normais. As publicações usam linguagem alarmista ("foragido", "desespero") para reforçar narrativa falsa sem base factual.
+                    <strong>✅ Realidade:</strong> Ao contrário do que sugerem conteúdos nas redes sociais, Lula não está atrás. As alegações misturam índices de performance digital com pesquisas científicas — conceitos diferentes que não devem ser equiparados.
                 </div>
                 <div class="source">
-                    📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-fugiu-do-brasil-para-nao-ser-preso-em-operacao-da-pf.html" target="_blank">Boatos.org — Fuga para Europa</a>
+                    📎 <a href="https://www.boatos.org/politica/lula-esta-atras-de-michelle-e-flavio-bolsonaro-em-pesquisa-eleitoral.html" target="_blank">Boatos.org — Lula vs Michelle</a>
                 </div>
                 <button class="whatsapp-btn" onclick="copyToWhatsApp(1)">💬 Copiar para WhatsApp</button>
+            </div>
+
+            <div class="fact-check">
+                <span class="status-badge false">FALSO</span>
+                <div class="date">20 de Julho, 2025</div>
+                <div class="claim">✈️ "Flávio Bolsonaro fugiu para a Europa para evitar prisão"</div>
+                <div class="reality">
+                    <strong>✅ Realidade:</strong> Não há indícios de que ele "fugiu". Viagens ao exterior durante recesso parlamentar são normais. As publicações usam linguagem alarmista ("foragido", "desespero") para reforçar narrativa falsa sem base factual.
+                </div>
+                <div class="source">
+                    📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-fugiu-do-brasil-para-nao-ser-preso-em-operacao-da-pf.html" target="_blank">Boatos.org — Fuga Europa</a>
+                </div>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(2)">💬 Copiar para WhatsApp</button>
             </div>
 
             <div class="fact-check">
@@ -248,12 +261,12 @@
                 <div class="date">2 de Julho, 2024</div>
                 <div class="claim">🍃 "Flávio Bolsonaro foi flagrado fumando maconha no desfile da Sapucaí"</div>
                 <div class="reality">
-                    <strong>✅ Realidade:</strong> Vídeo que circulava não mostra Flávio fumando maconha. A alegação surgiu com linguagem sensacionalista e sem fonte credível. O vídeo foi manipulado ou descontextualizado para criar história falsa sobre o senador.
+                    <strong>✅ Realidade:</strong> Vídeo que circulava não mostra Flávio fumando maconha. A alegação surgiu com linguagem sensacionalista e sem fonte credível.
                 </div>
                 <div class="source">
                     📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-foi-flagrado-fumando-maconha-em-desfile-na-sapucai.html" target="_blank">Boatos.org — Maconha Sapucaí</a>
                 </div>
-                <button class="whatsapp-btn" onclick="copyToWhatsApp(2)">💬 Copiar para WhatsApp</button>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(3)">💬 Copiar para WhatsApp</button>
             </div>
 
             <div class="fact-check">
@@ -261,12 +274,12 @@
                 <div class="date">8 de Outubro, 2018</div>
                 <div class="claim">👕 "Flávio Bolsonaro foi visto com camiseta xingando nordestinos"</div>
                 <div class="reality">
-                    <strong>✅ Realidade:</strong> Foto que circulava mostrava uma camiseta ofensiva aos nordestinos, supostamente de Flávio. <strong>Sem comprovação autêntica</strong> de que ele usou tal camiseta. Imagem foi usada para inflamar sentimentos regionais em período eleitoral (2018).
+                    <strong>✅ Realidade:</strong> Sem comprovação autêntica de que ele usou tal camiseta. Imagem foi usada para inflamar sentimentos regionais em período eleitoral.
                 </div>
                 <div class="source">
                     📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-camiseta-nordestinos.html" target="_blank">Boatos.org — Camiseta nordestinos</a>
                 </div>
-                <button class="whatsapp-btn" onclick="copyToWhatsApp(3)">💬 Copiar para WhatsApp</button>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(4)">💬 Copiar para WhatsApp</button>
             </div>
 
             <div class="fact-check">
@@ -274,37 +287,148 @@
                 <div class="date">1 de Outubro, 2018</div>
                 <div class="claim">🏳️‍🌈 "Flávio Bolsonaro disse que pai pode tirar vida de filho gay"</div>
                 <div class="reality">
-                    <strong>✅ Realidade:</strong> Alegação de que Flávio teria declarado: <em>"Se um pai tira a vida de um filho gay, é uma questão familiar. O Estado não deve se intrometer."</em> <strong>Sem fonte confiável</strong> que confirme essa declaração. Circulou em meme com 11+ mil compartilhamentos, mas <strong>nunca foi comprovada</strong> por jornais ou instituições credíveis.
+                    <strong>✅ Realidade:</strong> Sem fonte confiável que confirme essa declaração. Circulou em meme com 11+ mil compartilhamentos, mas nunca foi comprovada por jornais ou instituições credíveis.
                 </div>
                 <div class="source">
                     📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-pai-filho-gay.html" target="_blank">Boatos.org — Pai e filho gay</a>
                 </div>
-                <button class="whatsapp-btn" onclick="copyToWhatsApp(4)">💬 Copiar para WhatsApp</button>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(5)">💬 Copiar para WhatsApp</button>
+            </div>
+
+            <div class="fact-check">
+                <span class="status-badge false">FALSO</span>
+                <div class="date">1 de Outubro, 2022</div>
+                <div class="claim">🏠 "Flávio Bolsonaro comprou mansão de R$10 milhões em Ilha Comprida"</div>
+                <div class="reality">
+                    <strong>✅ Realidade:</strong> Boato que circulou online sem comprovação. Alegações sobre propriedades de Flávio Bolsonaro foram frequentemente distorcidas ou fabricadas nas redes sociais.
+                </div>
+                <div class="source">
+                    📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-mansao-ilha-comprida.html" target="_blank">Boatos.org — Mansão Ilha Comprida</a>
+                </div>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(6)">💬 Copiar para WhatsApp</button>
+            </div>
+
+            <div class="fact-check">
+                <span class="status-badge false">FALSO</span>
+                <div class="date">15 de Março, 2020</div>
+                <div class="claim">⚖️ "Moro afastou promotor do caso Flávio Bolsonaro e delegado do caso Marielle"</div>
+                <div class="reality">
+                    <strong>✅ Realidade:</strong> Boato que correlacionava afastamentos de servidores públicos com supostamente "acobertamento" de família Bolsonaro e caso Marielle. Sem comprovação de conspiração.
+                </div>
+                <div class="source">
+                    📎 <a href="https://www.boatos.org/politica/moro-afastou-promotor-caso-flavio-bolsonaro-e-delegado-caso-marielle.html" target="_blank">Boatos.org — Moro afastamentos</a>
+                </div>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(7)">💬 Copiar para WhatsApp</button>
+            </div>
+
+            <div class="fact-check">
+                <span class="status-badge false">FALSO</span>
+                <div class="date">3 de Julho, 2019</div>
+                <div class="claim">🍗 "Flávio Bolsonaro foi visto almoçando com assassino de Marielle"</div>
+                <div class="reality">
+                    <strong>✅ Realidade:</strong> Boato que ligava supuestamente Flávio a criminosos envolvidos no assassinato de Marielle Franco. Sem base factual ou comprovação.
+                </div>
+                <div class="source">
+                    📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-assassino-marielle-almoco.html" target="_blank">Boatos.org — Almoço Marielle</a>
+                </div>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(8)">💬 Copiar para WhatsApp</button>
+            </div>
+
+            <div class="fact-check">
+                <span class="status-badge false">FALSO</span>
+                <div class="date">3 de Julho, 2019</div>
+                <div class="claim">⛔ "Fotos mostram Flávio Bolsonaro com sargento preso com cocaína"</div>
+                <div class="reality">
+                    <strong>✅ Realidade:</strong> Imagens que circulavam ligando Flávio a sargento da FAB preso com cocaína na Espanha. Fotos descontextualizadas ou fabricadas para criar conexões falsas.
+                </div>
+                <div class="source">
+                    📎 <a href="https://www.boatos.org/politica/fotos-jair-eduardo-flavio-bolsonaro-sargento-preso.html" target="_blank">Boatos.org — Sargento cocaína</a>
+                </div>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(9)">💬 Copiar para WhatsApp</button>
+            </div>
+
+            <div class="fact-check">
+                <span class="status-badge false">FALSO</span>
+                <div class="date">27 de Setembro, 2018</div>
+                <div class="claim">☂️ "Flávio Bolsonaro disse que garçom morto pela polícia correu risco por usar guarda-chuva"</div>
+                <div class="reality">
+                    <strong>✅ Realidade:</strong> Boato que atribuía a Flávio uma declaração absurda e ofensiva sobre morte de garçom negro. Circulou em meme sem comprovação de declaração real.
+                </div>
+                <div class="source">
+                    📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-garcom-guarda-chuva.html" target="_blank">Boatos.org — Garçom guarda-chuva</a>
+                </div>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(10)">💬 Copiar para WhatsApp</button>
+            </div>
+
+            <div class="fact-check">
+                <span class="status-badge false">FALSO</span>
+                <div class="date">28 de Agosto, 2016</div>
+                <div class="claim">☠️ "Flávio Bolsonaro foi envenenado durante debate eleitoral"</div>
+                <div class="reality">
+                    <strong>✅ Realidade:</strong> Boato que alega que Flávio foi envenenado com Rohypnol durante debate na Band em 2016. Sem comprovação médica ou investigação que confirmasse alegação absurda.
+                </div>
+                <div class="source">
+                    📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-foi-envenenado.html" target="_blank">Boatos.org — Envenenamento</a>
+                </div>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(11)">💬 Copiar para WhatsApp</button>
+            </div>
+
+            <div class="fact-check">
+                <span class="status-badge false">FALSO</span>
+                <div class="date">11 de Outubro, 2018</div>
+                <div class="claim">📱 "WhatsApp falso de Flávio Bolsonaro está sendo compartilhado — hackers roubando dados"</div>
+                <div class="reality">
+                    <strong>✅ Realidade:</strong> Boato que alertava sobre número de WhatsApp falso (21) 99399-1215 supostamente de Flávio, com hackers roubando dados. Típica fake news de segurança da época.
+                </div>
+                <div class="source">
+                    📎 <a href="https://www.boatos.org/tecnologia/whatsapp-falso-flavio-bolsonaro-hacker.html" target="_blank">Boatos.org — WhatsApp falso</a>
+                </div>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(12)">💬 Copiar para WhatsApp</button>
             </div>
         </section>
 
         <section id="timeline">
             <h2>📅 Timeline da Boataria</h2>
             <div style="border-left: 3px solid #ffcd39; padding-left: 20px;">
-                <div style="margin-bottom: 30px;">
+                <div style="margin-bottom: 20px;">
                     <strong style="color: #ffcd39;">2026 — Janeiro</strong>
-                    <p>Enquete do Instagram com 73% dos votos circula como "pesquisa eleitoral"</p>
+                    <p style="margin-top: 5px;">Enquete do Instagram com 73% circula como "pesquisa eleitoral"</p>
                 </div>
-                <div style="margin-bottom: 30px;">
+                <div style="margin-bottom: 20px;">
+                    <strong style="color: #ffcd39;">2025 — Dezembro</strong>
+                    <p style="margin-top: 5px;">Alegações de que Lula está atrás de Michelle e Flávio</p>
+                </div>
+                <div style="margin-bottom: 20px;">
                     <strong style="color: #ffcd39;">2025 — Julho</strong>
-                    <p>Alegação de "fuga para Europa" para evitar prisão</p>
+                    <p style="margin-top: 5px;">Narrativa de "fuga para Europa" para evitar prisão</p>
                 </div>
-                <div style="margin-bottom: 30px;">
+                <div style="margin-bottom: 20px;">
                     <strong style="color: #ffcd39;">2024 — Julho</strong>
-                    <p>Vídeo falso de Flávio fumando maconha na Sapucaí</p>
+                    <p style="margin-top: 5px;">Vídeo falso de Flávio fumando maconha na Sapucaí</p>
                 </div>
-                <div style="margin-bottom: 30px;">
-                    <strong style="color: #ffcd39;">2018 — Outubro</strong>
-                    <p>Camiseta ofensiva aos nordestinos (sem comprovação)</p>
+                <div style="margin-bottom: 20px;">
+                    <strong style="color: #ffcd39;">2022 — Outubro</strong>
+                    <p style="margin-top: 5px;">Boato sobre mansão de R$10M em Ilha Comprida</p>
                 </div>
-                <div style="margin-bottom: 30px;">
+                <div style="margin-bottom: 20px;">
+                    <strong style="color: #ffcd39;">2020 — Março</strong>
+                    <p style="margin-top: 5px;">Alegações sobre Moro afastando promotores e delegados</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <strong style="color: #ffcd39;">2019 — Julho</strong>
+                    <p style="margin-top: 5px;">Boatos de almoço com assassinos de Marielle e sargento com cocaína</p>
+                </div>
+                <div style="margin-bottom: 20px;">
                     <strong style="color: #ffcd39;">2018 — Outubro</strong>
-                    <p>Citação falsa sobre filho gay (meme com 11k+ shares)</p>
+                    <p style="margin-top: 5px;">Camiseta xingando nordestinos + declaração sobre filho gay</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <strong style="color: #ffcd39;">2018 — Setembro</strong>
+                    <p style="margin-top: 5px;">Falsa declaração sobre garçom morto pela polícia</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <strong style="color: #ffcd39;">2016 — Agosto</strong>
+                    <p style="margin-top: 5px;">Boato de envenenamento durante debate eleitoral</p>
                 </div>
             </div>
         </section>
@@ -330,7 +454,7 @@
 
     <footer>
         <p>🤥 <strong>Mentirómetro do Flávio</strong> © 2026</p>
-        <p>Um serviço público de sátira política</p>
+        <p>Um serviço público de sátira política baseado em Boatos.org</p>
         <p style="margin-top: 20px; font-size: 0.9em;">⚠️ <strong>Aviso legal:</strong> Este site é uma obra de sátira política. Informações factuais baseadas em Boatos.org e fact-checkers brasileiros credíveis.</p>
     </footer>
 
@@ -339,39 +463,78 @@
             const factChecks = [
                 {
                     claim: "Pesquisa eleitoral mostra vitória esmagadora de Flávio Bolsonaro com 73% dos votos contra Lula",
-                    reality: "Os números citados provêm de uma enquete do Instagram sem valor científico. As pesquisas registradas pelos principais institutos mostram Lula à frente.",
+                    reality: "Os números citados provêm de uma enquete do Instagram sem valor científico.",
                     source: "https://www.boatos.org/politica/pesquisa-eleitoral-mostra-vitoria-esmagadora-de-flavio-bolsonaro-com-73-dos-votos-contra-lula.html"
                 },
                 {
-                    claim: "Flávio Bolsonaro fugiu para a Europa para evitar prisão na PF",
-                    reality: "Não há indícios de que ele 'fugiu' — viagens ao exterior durante recesso parlamentar são normais. As publicações usam linguagem alarmista sem base factual.",
+                    claim: "Lula está atrás de Michelle e Flávio Bolsonaro em pesquisa eleitoral",
+                    reality: "Ao contrário do que sugerem conteúdos, Lula não está atrás em pesquisas científicas.",
+                    source: "https://www.boatos.org/politica/lula-esta-atras-de-michelle-e-flavio-bolsonaro-em-pesquisa-eleitoral.html"
+                },
+                {
+                    claim: "Flávio Bolsonaro fugiu para a Europa para evitar prisão",
+                    reality: "Não há indícios de que ele fugiu. Viagens ao exterior durante recesso parlamentar são normais.",
                     source: "https://www.boatos.org/politica/flavio-bolsonaro-fugiu-do-brasil-para-nao-ser-preso-em-operacao-da-pf.html"
                 },
                 {
                     claim: "Flávio Bolsonaro foi flagrado fumando maconha no desfile da Sapucaí",
-                    reality: "Vídeo que circulava não mostra Flávio fumando maconha. A alegação surgiu com linguagem sensacionalista e sem fonte credível.",
+                    reality: "Vídeo que circulava não mostra Flávio fumando maconha. Alegação sem fonte credível.",
                     source: "https://www.boatos.org/politica/flavio-bolsonaro-foi-flagrado-fumando-maconha-em-desfile-na-sapucai.html"
                 },
                 {
                     claim: "Flávio Bolsonaro foi visto com camiseta xingando nordestinos",
-                    reality: "Sem comprovação autêntica de que ele usou tal camiseta. Imagem foi usada para inflamar sentimentos regionais em período eleitoral.",
+                    reality: "Sem comprovação autêntica de que ele usou tal camiseta.",
                     source: "https://www.boatos.org/politica/flavio-bolsonaro-camiseta-nordestinos.html"
                 },
                 {
                     claim: "Flávio Bolsonaro disse que pai pode tirar vida de filho gay",
-                    reality: "Sem fonte confiável que confirme essa declaração. Circulou em meme, mas nunca foi comprovada por jornais ou instituições credíveis.",
+                    reality: "Sem fonte confiável que confirme essa declaração. Circulou em meme.",
                     source: "https://www.boatos.org/politica/flavio-bolsonaro-pai-filho-gay.html"
+                },
+                {
+                    claim: "Flávio Bolsonaro comprou mansão de R$10 milhões em Ilha Comprida",
+                    reality: "Boato que circulou online sem comprovação.",
+                    source: "https://www.boatos.org/politica/flavio-bolsonaro-mansao-ilha-comprida.html"
+                },
+                {
+                    claim: "Moro afastou promotor do caso Flávio Bolsonaro",
+                    reality: "Boato que correlacionava afastamentos com supostamente acobertamento. Sem comprovação de conspiração.",
+                    source: "https://www.boatos.org/politica/moro-afastou-promotor-caso-flavio-bolsonaro-e-delegado-caso-marielle.html"
+                },
+                {
+                    claim: "Flávio Bolsonaro foi visto almoçando com assassino de Marielle",
+                    reality: "Boato que ligava Flávio a criminosos. Sem base factual.",
+                    source: "https://www.boatos.org/politica/flavio-bolsonaro-assassino-marielle-almoco.html"
+                },
+                {
+                    claim: "Fotos mostram Flávio Bolsonaro com sargento preso com cocaína",
+                    reality: "Imagens descontextualizadas ou fabricadas para criar conexões falsas.",
+                    source: "https://www.boatos.org/politica/fotos-jair-eduardo-flavio-bolsonaro-sargento-preso.html"
+                },
+                {
+                    claim: "Flávio Bolsonaro disse que garçom morto correu risco por usar guarda-chuva",
+                    reality: "Declaração absurda circulou em meme sem comprovação de fala real.",
+                    source: "https://www.boatos.org/politica/flavio-bolsonaro-garcom-guarda-chuva.html"
+                },
+                {
+                    claim: "Flávio Bolsonaro foi envenenado com Rohypnol durante debate",
+                    reality: "Boato sem comprovação médica ou investigação que confirmasse alegação absurda.",
+                    source: "https://www.boatos.org/politica/flavio-bolsonaro-foi-envenenado.html"
+                },
+                {
+                    claim: "WhatsApp falso de Flávio Bolsonaro com hackers roubando dados",
+                    reality: "Típica fake news de segurança da época sem comprovação.",
+                    source: "https://www.boatos.org/tecnologia/whatsapp-falso-flavio-bolsonaro-hacker.html"
                 }
             ];
 
             const fact = factChecks[index];
             const text = `🔍 FACT-CHECK — ${fact.claim}\n\n✅ REALIDADE: ${fact.reality}\n\n📎 FONTE: ${fact.source}\n\n🇧🇷 via Mentirómetro do Flávio — Boatos.org`;
             
-            // Copy to clipboard
             navigator.clipboard.writeText(text).then(() => {
                 const btn = event.target;
                 const originalText = btn.textContent;
-                btn.textContent = '✅ Copiado! Pronto pro WhatsApp';
+                btn.textContent = '✅ Copiado!';
                 btn.style.background = '#20ba5e';
                 
                 setTimeout(() => {
@@ -379,7 +542,6 @@
                     btn.style.background = '#25D366';
                 }, 2000);
 
-                // Open WhatsApp Web
                 setTimeout(() => {
                     window.open('https://web.whatsapp.com/', '_blank');
                 }, 500);
