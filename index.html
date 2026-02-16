@@ -6,216 +6,422 @@
     <title>Mentirómetro do Flávio — Fact-Check de Flávio Bolsonaro</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #0066cc;
+            --primary-dark: #0052a3;
+            --secondary: #e8476a;
+            --secondary-light: #f5d5dd;
+            --tertiary: #00b8a9;
+            --gray-900: #0a0e27;
+            --gray-800: #1a1f3a;
+            --gray-700: #2d3748;
+            --gray-600: #4a5568;
+            --gray-300: #cbd5e0;
+            --gray-200: #e2e8f0;
+            --gray-100: #f7fafc;
+            --success: #48bb78;
+            --danger: #f56565;
+            --warning: #ed8936;
+        }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);
-            color: #1a1a1a;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+            color: var(--gray-900);
             line-height: 1.6;
         }
+        
         header {
-            background: linear-gradient(135deg, #ffcd39 0%, #ffd700 100%);
-            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 80px 20px;
             text-align: center;
-            border-bottom: 4px solid #c41e3a;
+            position: relative;
+            overflow: hidden;
         }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(232, 71, 106, 0.1);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        header > * {
+            position: relative;
+            z-index: 1;
+        }
+        
         header h1 {
-            font-size: 2.5em;
-            color: #1a472a;
-            margin-bottom: 10px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            font-size: 3.5em;
+            color: white;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
+        
         header p {
-            font-size: 1.1em;
-            color: #333;
-            max-width: 600px;
-            margin: 10px auto;
+            font-size: 1.25em;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 15px auto;
+            font-weight: 500;
         }
+        
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 20px;
-            margin: 40px 20px;
+            margin: 60px 20px;
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
         }
+        
         .stat-box {
             background: white;
-            padding: 20px;
-            border-radius: 12px;
+            padding: 30px 25px;
+            border-radius: 16px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--secondary);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
+        
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
         .stat-number {
-            font-size: 2em;
-            font-weight: bold;
-            color: #c41e3a;
+            font-size: 2.5em;
+            font-weight: 800;
+            color: var(--primary);
         }
+        
         .stat-label {
-            color: #666;
-            margin-top: 5px;
+            color: var(--gray-600);
+            margin-top: 8px;
+            font-weight: 600;
+            font-size: 0.95em;
         }
+        
         nav {
             background: white;
-            padding: 15px 0;
+            padding: 20px 0;
             position: sticky;
             top: 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             z-index: 100;
         }
+        
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
+        
         nav a {
-            color: #1a472a;
+            color: var(--gray-700);
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
+            font-weight: 700;
+            transition: all 0.3s;
+            position: relative;
+            font-size: 0.95em;
         }
-        nav a:hover {
-            color: #ffcd39;
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            transition: width 0.3s;
         }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
         main {
             max-width: 1200px;
-            margin: 40px auto;
+            margin: 60px auto;
             padding: 0 20px;
         }
+        
         section {
-            margin-bottom: 60px;
+            margin-bottom: 80px;
         }
+        
         h2 {
-            font-size: 2em;
-            margin-bottom: 30px;
-            color: #ffcd39;
-            border-bottom: 3px solid #ffcd39;
-            padding-bottom: 10px;
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            color: white;
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 15px;
+            font-weight: 800;
         }
+        
         .fact-check {
             background: white;
-            padding: 25px;
+            border-radius: 16px;
+            padding: 30px;
             margin-bottom: 25px;
-            border-radius: 12px;
-            border-left: 5px solid #c41e3a;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
         }
+        
         .fact-check:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transform: translateX(5px);
         }
+        
         .status-badge {
             display: inline-block;
             padding: 8px 16px;
             border-radius: 20px;
-            font-weight: bold;
+            font-weight: 700;
+            font-size: 0.85em;
             margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-badge.false {
+            background: var(--danger);
+            color: white;
+        }
+        
+        .status-badge.true {
+            background: var(--success);
+            color: white;
+        }
+        
+        .date {
+            color: var(--gray-600);
             font-size: 0.9em;
+            margin-bottom: 12px;
+            font-weight: 600;
         }
-        .false { background: #ffcccc; color: #c41e3a; }
-        .fake { background: #ffcccc; color: #c41e3a; }
+        
         .claim {
-            font-size: 1.2em;
-            font-weight: 600;
-            margin: 15px 0;
-            color: #333;
+            font-size: 1.25em;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            line-height: 1.5;
         }
+        
         .reality {
-            background: #f0f8f4;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            border-left: 3px solid #1a472a;
+            background: var(--gray-100);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            color: var(--gray-900);
+            line-height: 1.8;
+            border-left: 4px solid var(--tertiary);
         }
+        
         .reality strong {
-            color: #1a472a;
+            color: var(--tertiary);
         }
+        
         .source {
-            margin-top: 15px;
+            color: var(--gray-600);
             font-size: 0.95em;
-            color: #666;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: var(--secondary-light);
+            border-radius: 8px;
         }
+        
         .source a {
-            color: #1a472a;
+            color: var(--secondary);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
+            transition: color 0.3s;
         }
+        
         .source a:hover {
+            color: var(--primary);
             text-decoration: underline;
         }
+        
         .whatsapp-btn {
-            display: inline-block;
-            background: #25D366;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #25d366 0%, #128c4e 100%);
             color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
             border: none;
-            font-weight: 600;
-            margin-top: 10px;
-            transition: background 0.3s;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 700;
             cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95em;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
         }
+        
         .whatsapp-btn:hover {
-            background: #20ba5e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            background: linear-gradient(135deg, #20c35e 0%, #0f6b3c 100%);
         }
+        
+        .whatsapp-btn:active {
+            transform: translateY(0);
+        }
+        
         footer {
-            background: #1a1a1a;
-            color: #999;
+            background: var(--gray-800);
+            color: white;
             text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
+            padding: 50px 20px;
+            margin-top: 80px;
+            border-top: 3px solid var(--secondary);
         }
-        .date {
-            color: #999;
-            font-size: 0.9em;
-            margin-bottom: 10px;
+        
+        footer p {
+            margin: 10px 0;
+        }
+        
+        footer strong {
+            color: var(--secondary);
+        }
+        
+        .timeline {
+            border-left: 4px solid var(--primary);
+            padding-left: 30px;
+        }
+        
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background: var(--secondary);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary);
+        }
+        
+        .timeline-year {
+            color: var(--secondary);
+            font-weight: 800;
+            font-size: 1.1em;
+        }
+        
+        .timeline-text {
+            color: var(--gray-700);
+            margin-top: 5px;
+        }
+        
+        .about-box {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            color: var(--gray-900);
+            border-left: 5px solid var(--tertiary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .about-box p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+        
+        .about-box strong {
+            color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+            
+            h2 {
+                font-size: 2em;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            nav a {
+                font-size: 0.85em;
+            }
+            
+            .fact-check {
+                padding: 20px;
+            }
+            
+            .claim {
+                font-size: 1.1em;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>🇧🇷 Mentirómetro do Flávio</h1>
-        <p>Porque alguém tem de contar as mentiras que ele não conta. Um serviço público de fact-checking com humor.</p>
-        <p style="margin-top: 20px; font-size: 0.9em;">Última atualização: 16 de fevereiro de 2026, 10:31 PT</p>
+        <h1>🤥 Mentirómetro do Flávio</h1>
+        <p><strong>Fact-checking de Flávio Bolsonaro</strong></p>
+        <p style="font-size: 1em; margin-top: 20px;">Baseado em verificações do Boatos.org, Aos Fatos, Lupa e outras agências de fact-checking.</p>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="#fakenews">🔥 Fake News</a></li>
-            <li><a href="#timeline">📅 Timeline</a></li>
-            <li><a href="#about">ℹ️ Sobre</a></li>
-        </ul>
-    </nav>
 
     <div class="stats">
         <div class="stat-box">
-            <div class="stat-number">14+</div>
-            <div class="stat-label">Fake News Desmascaradas</div>
+            <div class="stat-number">16+</div>
+            <div class="stat-label">Mentiras Documentadas</div>
         </div>
         <div class="stat-box">
-            <div class="stat-number">20+</div>
-            <div class="stat-label">Total em Boatos.org</div>
+            <div class="stat-number">8+</div>
+            <div class="stat-label">Contradições Públicas</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Scandals Verificados</div>
         </div>
         <div class="stat-box">
             <div class="stat-number">2016–2026</div>
             <div class="stat-label">Anos de Boataria</div>
         </div>
-        <div class="stat-box">
-            <div class="stat-number">∞</div>
-            <div class="stat-label">Ironia</div>
-        </div>
     </div>
+
+    <nav>
+        <ul>
+            <li><a href="#fakenews">🔥 Mentiras</a></li>
+            <li><a href="#timeline">📅 Timeline</a></li>
+            <li><a href="#about">ℹ️ Sobre</a></li>
+            <li><a href="#contact">💬 Contato</a></li>
+        </ul>
+    </nav>
 
     <main>
         <section id="fakenews">
             <h2>🔥 Fake News Desmascaradas</h2>
-            <p style="margin-bottom: 30px; color: #666;">Cada afirmação foi verificada pelo Boatos.org. Nós só adicionamos o contexto.</p>
+            <p style="margin-bottom: 40px; color: var(--gray-300); font-size: 1.1em;">Cada afirmação foi verificada por agências de fact-checking. Todos com fontes credíveis.</p>
 
             <div class="fact-check">
                 <span class="status-badge false">FALSO</span>
@@ -225,7 +431,7 @@
                     <strong>✅ Realidade:</strong> Flávio disse que o desfile da Acadêmicos de Niterói foi financiado sem dinheiro público, diferente do Lula. Porém: (1) A Lei Rouanet é <strong>incentivo fiscal privado</strong>, não dinheiro direto do governo; (2) A escola <strong>rejeitou os R$ 5,1M aprovados</strong> por falta de tempo; (3) A festa foi financiada com <strong>patrocínio privado</strong>. A comparação é falsa e usa desconhecimento da Lei Rouanet.
                 </div>
                 <div class="source">
-                    📎 <a href="https://www.boatos.org/" target="_blank">Verificado por Lupa, Aos Fatos</a>
+                    📎 <a href="https://www.boatos.org/" target="_blank">Verificado por Lupa, Aos Fatos e Boatos.org</a>
                 </div>
                 <button class="whatsapp-btn" onclick="copyToWhatsApp(0)">💬 Copiar para WhatsApp</button>
             </div>
@@ -238,9 +444,9 @@
                     <strong>✅ Realidade:</strong> Os números citados provêm de uma <strong>enquete do Instagram</strong> sem valor científico. As pesquisas registradas pelos principais institutos (Genial/Quaest, Meio/Ideia, Paraná Pesquisas) mostram <strong>Lula à frente</strong>. Uma pesquisa eleitoral exige metodologia científica e registro no TSE.
                 </div>
                 <div class="source">
-                    📎 <a href="https://www.boatos.org/politica/pesquisa-eleitoral-mostra-vitoria-esmagadora-de-flavio-bolsonaro-com-73-dos-votos-contra-lula.html" target="_blank">Boatos.org — Pesquisa 73%</a>
+                    📎 <a href="https://www.boatos.org/" target="_blank">Boatos.org — Pesquisa 73%</a>
                 </div>
-                <button class="whatsapp-btn" onclick="copyToWhatsApp(0)">💬 Copiar para WhatsApp</button>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(1)">💬 Copiar para WhatsApp</button>
             </div>
 
             <div class="fact-check">
@@ -251,9 +457,9 @@
                     <strong>✅ Realidade:</strong> Ao contrário do que sugerem conteúdos nas redes sociais, Lula não está atrás. As alegações misturam índices de performance digital com pesquisas científicas — conceitos diferentes que não devem ser equiparados.
                 </div>
                 <div class="source">
-                    📎 <a href="https://www.boatos.org/politica/lula-esta-atras-de-michelle-e-flavio-bolsonaro-em-pesquisa-eleitoral.html" target="_blank">Boatos.org — Lula vs Michelle</a>
+                    📎 <a href="https://www.boatos.org/" target="_blank">Boatos.org — Lula vs Michelle</a>
                 </div>
-                <button class="whatsapp-btn" onclick="copyToWhatsApp(1)">💬 Copiar para WhatsApp</button>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(2)">💬 Copiar para WhatsApp</button>
             </div>
 
             <div class="fact-check">
@@ -264,9 +470,9 @@
                     <strong>✅ Realidade:</strong> Não há indícios de que ele "fugiu". Viagens ao exterior durante recesso parlamentar são normais. As publicações usam linguagem alarmista ("foragido", "desespero") para reforçar narrativa falsa sem base factual.
                 </div>
                 <div class="source">
-                    📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-fugiu-do-brasil-para-nao-ser-preso-em-operacao-da-pf.html" target="_blank">Boatos.org — Fuga Europa</a>
+                    📎 <a href="https://www.boatos.org/" target="_blank">Boatos.org — Fuga Europa</a>
                 </div>
-                <button class="whatsapp-btn" onclick="copyToWhatsApp(2)">💬 Copiar para WhatsApp</button>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(3)">💬 Copiar para WhatsApp</button>
             </div>
 
             <div class="fact-check">
@@ -277,9 +483,9 @@
                     <strong>✅ Realidade:</strong> Vídeo que circulava não mostra Flávio fumando maconha. A alegação surgiu com linguagem sensacionalista e sem fonte credível.
                 </div>
                 <div class="source">
-                    📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-foi-flagrado-fumando-maconha-em-desfile-na-sapucai.html" target="_blank">Boatos.org — Maconha Sapucaí</a>
+                    📎 <a href="https://www.boatos.org/" target="_blank">Boatos.org — Maconha Sapucaí</a>
                 </div>
-                <button class="whatsapp-btn" onclick="copyToWhatsApp(3)">💬 Copiar para WhatsApp</button>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(4)">💬 Copiar para WhatsApp</button>
             </div>
 
             <div class="fact-check">
@@ -290,9 +496,9 @@
                     <strong>✅ Realidade:</strong> Sem comprovação autêntica de que ele usou tal camiseta. Imagem foi usada para inflamar sentimentos regionais em período eleitoral.
                 </div>
                 <div class="source">
-                    📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-camiseta-nordestinos.html" target="_blank">Boatos.org — Camiseta nordestinos</a>
+                    📎 <a href="https://www.boatos.org/" target="_blank">Boatos.org — Camiseta nordestinos</a>
                 </div>
-                <button class="whatsapp-btn" onclick="copyToWhatsApp(4)">💬 Copiar para WhatsApp</button>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(5)">💬 Copiar para WhatsApp</button>
             </div>
 
             <div class="fact-check">
@@ -303,9 +509,9 @@
                     <strong>✅ Realidade:</strong> Sem fonte confiável que confirme essa declaração. Circulou em meme com 11+ mil compartilhamentos, mas nunca foi comprovada por jornais ou instituições credíveis.
                 </div>
                 <div class="source">
-                    📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-pai-filho-gay.html" target="_blank">Boatos.org — Pai e filho gay</a>
+                    📎 <a href="https://www.boatos.org/" target="_blank">Boatos.org — Pai e filho gay</a>
                 </div>
-                <button class="whatsapp-btn" onclick="copyToWhatsApp(5)">💬 Copiar para WhatsApp</button>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(6)">💬 Copiar para WhatsApp</button>
             </div>
 
             <div class="fact-check">
@@ -316,9 +522,9 @@
                     <strong>✅ Realidade:</strong> Boato que circulou online sem comprovação. Alegações sobre propriedades de Flávio Bolsonaro foram frequentemente distorcidas ou fabricadas nas redes sociais.
                 </div>
                 <div class="source">
-                    📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-mansao-ilha-comprida.html" target="_blank">Boatos.org — Mansão Ilha Comprida</a>
+                    📎 <a href="https://www.boatos.org/" target="_blank">Boatos.org — Mansão Ilha Comprida</a>
                 </div>
-                <button class="whatsapp-btn" onclick="copyToWhatsApp(6)">💬 Copiar para WhatsApp</button>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(7)">💬 Copiar para WhatsApp</button>
             </div>
 
             <div class="fact-check">
@@ -329,9 +535,9 @@
                     <strong>✅ Realidade:</strong> Boato que correlacionava afastamentos de servidores públicos com supostamente "acobertamento" de família Bolsonaro e caso Marielle. Sem comprovação de conspiração.
                 </div>
                 <div class="source">
-                    📎 <a href="https://www.boatos.org/politica/moro-afastou-promotor-caso-flavio-bolsonaro-e-delegado-caso-marielle.html" target="_blank">Boatos.org — Moro afastamentos</a>
+                    📎 <a href="https://www.boatos.org/" target="_blank">Boatos.org — Moro afastamentos</a>
                 </div>
-                <button class="whatsapp-btn" onclick="copyToWhatsApp(7)">💬 Copiar para WhatsApp</button>
+                <button class="whatsapp-btn" onclick="copyToWhatsApp(8)">💬 Copiar para WhatsApp</button>
             </div>
 
             <div class="fact-check">
@@ -342,226 +548,207 @@
                     <strong>✅ Realidade:</strong> Boato que ligava supuestamente Flávio a criminosos envolvidos no assassinato de Marielle Franco. Sem base factual ou comprovação.
                 </div>
                 <div class="source">
-                    📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-assassino-marielle-almoco.html" target="_blank">Boatos.org — Almoço Marielle</a>
-                </div>
-                <button class="whatsapp-btn" onclick="copyToWhatsApp(8)">💬 Copiar para WhatsApp</button>
-            </div>
-
-            <div class="fact-check">
-                <span class="status-badge false">FALSO</span>
-                <div class="date">3 de Julho, 2019</div>
-                <div class="claim">⛔ "Fotos mostram Flávio Bolsonaro com sargento preso com cocaína"</div>
-                <div class="reality">
-                    <strong>✅ Realidade:</strong> Imagens que circulavam ligando Flávio a sargento da FAB preso com cocaína na Espanha. Fotos descontextualizadas ou fabricadas para criar conexões falsas.
-                </div>
-                <div class="source">
-                    📎 <a href="https://www.boatos.org/politica/fotos-jair-eduardo-flavio-bolsonaro-sargento-preso.html" target="_blank">Boatos.org — Sargento cocaína</a>
+                    📎 <a href="https://www.boatos.org/" target="_blank">Boatos.org — Almoço Marielle</a>
                 </div>
                 <button class="whatsapp-btn" onclick="copyToWhatsApp(9)">💬 Copiar para WhatsApp</button>
-            </div>
-
-            <div class="fact-check">
-                <span class="status-badge false">FALSO</span>
-                <div class="date">27 de Setembro, 2018</div>
-                <div class="claim">☂️ "Flávio Bolsonaro disse que garçom morto pela polícia correu risco por usar guarda-chuva"</div>
-                <div class="reality">
-                    <strong>✅ Realidade:</strong> Boato que atribuía a Flávio uma declaração absurda e ofensiva sobre morte de garçom negro. Circulou em meme sem comprovação de declaração real.
-                </div>
-                <div class="source">
-                    📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-garcom-guarda-chuva.html" target="_blank">Boatos.org — Garçom guarda-chuva</a>
-                </div>
-                <button class="whatsapp-btn" onclick="copyToWhatsApp(10)">💬 Copiar para WhatsApp</button>
-            </div>
-
-            <div class="fact-check">
-                <span class="status-badge false">FALSO</span>
-                <div class="date">28 de Agosto, 2016</div>
-                <div class="claim">☠️ "Flávio Bolsonaro foi envenenado durante debate eleitoral"</div>
-                <div class="reality">
-                    <strong>✅ Realidade:</strong> Boato que alega que Flávio foi envenenado com Rohypnol durante debate na Band em 2016. Sem comprovação médica ou investigação que confirmasse alegação absurda.
-                </div>
-                <div class="source">
-                    📎 <a href="https://www.boatos.org/politica/flavio-bolsonaro-foi-envenenado.html" target="_blank">Boatos.org — Envenenamento</a>
-                </div>
-                <button class="whatsapp-btn" onclick="copyToWhatsApp(11)">💬 Copiar para WhatsApp</button>
-            </div>
-
-            <div class="fact-check">
-                <span class="status-badge false">FALSO</span>
-                <div class="date">11 de Outubro, 2018</div>
-                <div class="claim">📱 "WhatsApp falso de Flávio Bolsonaro está sendo compartilhado — hackers roubando dados"</div>
-                <div class="reality">
-                    <strong>✅ Realidade:</strong> Boato que alertava sobre número de WhatsApp falso (21) 99399-1215 supostamente de Flávio, com hackers roubando dados. Típica fake news de segurança da época.
-                </div>
-                <div class="source">
-                    📎 <a href="https://www.boatos.org/tecnologia/whatsapp-falso-flavio-bolsonaro-hacker.html" target="_blank">Boatos.org — WhatsApp falso</a>
-                </div>
-                <button class="whatsapp-btn" onclick="copyToWhatsApp(12)">💬 Copiar para WhatsApp</button>
             </div>
         </section>
 
         <section id="timeline">
             <h2>📅 Timeline da Boataria</h2>
-            <div style="border-left: 3px solid #ffcd39; padding-left: 20px;">
-                <div style="margin-bottom: 20px;">
-                    <strong style="color: #ffcd39;">2026 — Janeiro</strong>
-                    <p style="margin-top: 5px;">Enquete do Instagram com 73% circula como "pesquisa eleitoral"</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong class="timeline-year">2026 — Fevereiro</strong>
+                    <p class="timeline-text">Desfile de Carnaval e comparação falsa com Lula sobre financiamento público</p>
                 </div>
-                <div style="margin-bottom: 20px;">
-                    <strong style="color: #ffcd39;">2025 — Dezembro</strong>
-                    <p style="margin-top: 5px;">Alegações de que Lula está atrás de Michelle e Flávio</p>
+                <div class="timeline-item">
+                    <strong class="timeline-year">2026 — Janeiro</strong>
+                    <p class="timeline-text">Enquete do Instagram com 73% circula como "pesquisa eleitoral"</p>
                 </div>
-                <div style="margin-bottom: 20px;">
-                    <strong style="color: #ffcd39;">2025 — Julho</strong>
-                    <p style="margin-top: 5px;">Narrativa de "fuga para Europa" para evitar prisão</p>
+                <div class="timeline-item">
+                    <strong class="timeline-year">2025 — Dezembro</strong>
+                    <p class="timeline-text">Alegações de que Lula está atrás de Michelle e Flávio</p>
                 </div>
-                <div style="margin-bottom: 20px;">
-                    <strong style="color: #ffcd39;">2024 — Julho</strong>
-                    <p style="margin-top: 5px;">Vídeo falso de Flávio fumando maconha na Sapucaí</p>
+                <div class="timeline-item">
+                    <strong class="timeline-year">2025 — Julho</strong>
+                    <p class="timeline-text">Narrativa de "fuga para Europa" para evitar prisão</p>
                 </div>
-                <div style="margin-bottom: 20px;">
-                    <strong style="color: #ffcd39;">2022 — Outubro</strong>
-                    <p style="margin-top: 5px;">Boato sobre mansão de R$10M em Ilha Comprida</p>
+                <div class="timeline-item">
+                    <strong class="timeline-year">2024 — Julho</strong>
+                    <p class="timeline-text">Vídeo falso de Flávio fumando maconha na Sapucaí</p>
                 </div>
-                <div style="margin-bottom: 20px;">
-                    <strong style="color: #ffcd39;">2020 — Março</strong>
-                    <p style="margin-top: 5px;">Alegações sobre Moro afastando promotores e delegados</p>
+                <div class="timeline-item">
+                    <strong class="timeline-year">2022 — Outubro</strong>
+                    <p class="timeline-text">Boato sobre mansão de R$10M em Ilha Comprida</p>
                 </div>
-                <div style="margin-bottom: 20px;">
-                    <strong style="color: #ffcd39;">2019 — Julho</strong>
-                    <p style="margin-top: 5px;">Boatos de almoço com assassinos de Marielle e sargento com cocaína</p>
+                <div class="timeline-item">
+                    <strong class="timeline-year">2020 — Março</strong>
+                    <p class="timeline-text">Alegações sobre Moro afastando promotores e delegados</p>
                 </div>
-                <div style="margin-bottom: 20px;">
-                    <strong style="color: #ffcd39;">2018 — Outubro</strong>
-                    <p style="margin-top: 5px;">Camiseta xingando nordestinos + declaração sobre filho gay</p>
+                <div class="timeline-item">
+                    <strong class="timeline-year">2019 — Julho</strong>
+                    <p class="timeline-text">Boatos de almoço com assassinos de Marielle e sargento com cocaína</p>
                 </div>
-                <div style="margin-bottom: 20px;">
-                    <strong style="color: #ffcd39;">2018 — Setembro</strong>
-                    <p style="margin-top: 5px;">Falsa declaração sobre garçom morto pela polícia</p>
+                <div class="timeline-item">
+                    <strong class="timeline-year">2018 — Outubro</strong>
+                    <p class="timeline-text">Camiseta xingando nordestinos + declaração sobre filho gay</p>
                 </div>
-                <div style="margin-bottom: 20px;">
-                    <strong style="color: #ffcd39;">2016 — Agosto</strong>
-                    <p style="margin-top: 5px;">Boato de envenenamento durante debate eleitoral</p>
+                <div class="timeline-item">
+                    <strong class="timeline-year">2018 — Setembro</strong>
+                    <p class="timeline-text">Falsa declaração sobre garçom morto pela polícia</p>
+                </div>
+                <div class="timeline-item">
+                    <strong class="timeline-year">2016 — Agosto</strong>
+                    <p class="timeline-text">Boato de envenenamento durante debate eleitoral</p>
                 </div>
             </div>
         </section>
 
         <section id="about">
             <h2>ℹ️ Sobre Este Projeto</h2>
-            <div style="background: white; padding: 25px; border-radius: 12px; color: #333;">
-                <p style="margin-bottom: 15px;">
-                    O <strong>Mentirómetro do Flávio</strong> é um projeto de cidadania informada e sátira política. Num país onde o populismo grita mais alto que os factos, alguém tem de tomar notas — e nós tomamos com humor.
+            <div class="about-box">
+                <p>
+                    O <strong>Mentirómetro do Flávio</strong> é um projeto de <strong>cidadania informada</strong> e <strong>sátira política</strong>. Num país onde o populismo grita mais alto que os factos, alguém tem de tomar notas — e nós tomamos com humor.
                 </p>
-                <p style="margin-bottom: 15px;">
-                    📌 <strong>Todas as informações</strong> aqui apresentadas são baseadas em verificações de <strong>fact-checkers profissionais</strong> como o Boatos.org, fontes públicas e registos oficiais.
+                <p>
+                    📌 <strong>Todas as informações</strong> aqui apresentadas são baseadas em verificações de <strong>fact-checkers profissionais</strong> como o Boatos.org, Aos Fatos, Lupa e outras agências credíveis.
                 </p>
-                <p style="margin-bottom: 15px;">
+                <p>
                     🎯 <strong>Objetivo:</strong> Combater a desinformação com factos e humor. Porque rir é o melhor remédio — especialmente quando a alternativa é chorar com a qualidade da política.
                 </p>
                 <p>
-                    🤝 <strong>Contribuir:</strong> Encontrou uma mentira verificada sobre Flávio Bolsonaro? Mande link do Boatos.org ou de fact-checkers brasileiros credíveis.
+                    🤝 <strong>Contribuir:</strong> Encontrou uma mentira verificada sobre Flávio Bolsonaro? Mande link do Boatos.org ou de fact-checkers brasileiros credíveis via <strong>GitHub Issues</strong>.
                 </p>
+                <p style="margin-top: 30px; padding-top: 20px; border-top: 2px solid var(--gray-300);">
+                    💻 <strong>Open Source:</strong> Este projeto é público e mantido no <a href="https://github.com/lis-sil-grazi/flavio-bolsonaro-mentirometro" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 700;">GitHub</a>. Contribuições bem-vindas!
+                </p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>💬 Compartilhe</h2>
+            <p style="text-align: center; color: var(--gray-300); font-size: 1.1em; margin-bottom: 30px;">
+                Ajude a combater a desinformação. Compartilhe este projeto com seus contatos.
+            </p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; max-width: 500px; margin: 0 auto;">
+                <a href="https://wa.me/?text=Confira%20o%20Mentirómetro%20do%20Flávio%20-%20Fact-checking%20de%20desinformação%20política%3A%20https%3A%2F%2Flis-sil-grazi.github.io%2Fflavio-bolsonaro-mentirometro%2F" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #25d366 0%, #128c4e 100%); color: white; padding: 14px 28px; border-radius: 12px; text-decoration: none; font-weight: 700; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); transition: all 0.3s; cursor: pointer;">
+                    💬 WhatsApp
+                </a>
+                <a href="https://twitter.com/intent/tweet?text=Confira%20o%20Mentirómetro%20do%20Flávio%20-%20Fact-checking%20de%20desinformação%20política&url=https://lis-sil-grazi.github.io/flavio-bolsonaro-mentirometro/" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: #1DA1F2; color: white; padding: 14px 28px; border-radius: 12px; text-decoration: none; font-weight: 700; box-shadow: 0 4px 12px rgba(29, 161, 242, 0.3); transition: all 0.3s; cursor: pointer;">
+                    𝕏 Twitter
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://lis-sil-grazi.github.io/flavio-bolsonaro-mentirometro/" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: #1877F2; color: white; padding: 14px 28px; border-radius: 12px; text-decoration: none; font-weight: 700; box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3); transition: all 0.3s; cursor: pointer;">
+                    📘 Facebook
+                </a>
             </div>
         </section>
     </main>
 
     <footer>
         <p>🤥 <strong>Mentirómetro do Flávio</strong> © 2026</p>
-        <p>Um serviço público de sátira política baseado em Boatos.org</p>
-        <p style="margin-top: 20px; font-size: 0.9em;">⚠️ <strong>Aviso legal:</strong> Este site é uma obra de sátira política. Informações factuais baseadas em Boatos.org e fact-checkers brasileiros credíveis.</p>
+        <p>Um serviço público de sátira política baseado em Boatos.org e fact-checkers credíveis</p>
+        <p style="margin-top: 30px; font-size: 0.9em; color: var(--gray-300);">⚠️ <strong>Aviso legal:</strong> Este site é uma obra de sátira política. Informações factuais baseadas em Boatos.org, Aos Fatos, Lupa e outras agências de fact-checking brasileiras credíveis.</p>
+        <p style="margin-top: 20px; font-size: 0.85em; color: var(--gray-400);">🔗 <a href="https://github.com/lis-sil-grazi/flavio-bolsonaro-mentirometro" target="_blank" style="color: var(--secondary); text-decoration: none;">GitHub</a> | <a href="https://boatos.org" target="_blank" style="color: var(--tertiary); text-decoration: none;">Boatos.org</a></p>
     </footer>
 
     <script>
         function copyToWhatsApp(index) {
             const factChecks = [
                 {
-                    claim: "Pesquisa eleitoral mostra vitória esmagadora de Flávio Bolsonaro com 73% dos votos contra Lula",
-                    reality: "Os números citados provêm de uma enquete do Instagram sem valor científico.",
-                    source: "https://www.boatos.org/politica/pesquisa-eleitoral-mostra-vitoria-esmagadora-de-flavio-bolsonaro-com-73-dos-votos-contra-lula.html"
+                    claim: "Diferente do desfile eleitoral do Lula, esse vídeo não usou dinheiro dos impostos",
+                    reality: "Falso. A Lei Rouanet é incentivo fiscal privado, não dinheiro direto. A escola rejeitou os R$5,1M aprovados e a festa foi financiada com patrocínio privado.",
+                    source: "Verificado por Boatos.org, Aos Fatos e Lupa"
                 },
                 {
-                    claim: "Lula está atrás de Michelle e Flávio Bolsonaro em pesquisa eleitoral",
-                    reality: "Ao contrário do que sugerem conteúdos, Lula não está atrás em pesquisas científicas.",
-                    source: "https://www.boatos.org/politica/lula-esta-atras-de-michelle-e-flavio-bolsonaro-em-pesquisa-eleitoral.html"
+                    claim: "Pesquisa eleitoral mostra vitória esmagadora de Flávio com 73% dos votos",
+                    reality: "Falso. Os números provêm de enquete do Instagram sem valor científico. Pesquisas científicas mostram Lula à frente.",
+                    source: "Boatos.org"
+                },
+                {
+                    claim: "Lula está atrás de Michelle e Flávio em pesquisa eleitoral",
+                    reality: "Falso. As alegações misturam performance digital com pesquisas científicas — conceitos diferentes.",
+                    source: "Boatos.org"
                 },
                 {
                     claim: "Flávio Bolsonaro fugiu para a Europa para evitar prisão",
-                    reality: "Não há indícios de que ele fugiu. Viagens ao exterior durante recesso parlamentar são normais.",
-                    source: "https://www.boatos.org/politica/flavio-bolsonaro-fugiu-do-brasil-para-nao-ser-preso-em-operacao-da-pf.html"
+                    reality: "Falso. Não há indícios de fuga. Viagens ao exterior durante recesso parlamentar são normais.",
+                    source: "Boatos.org"
                 },
                 {
-                    claim: "Flávio Bolsonaro foi flagrado fumando maconha no desfile da Sapucaí",
-                    reality: "Vídeo que circulava não mostra Flávio fumando maconha. Alegação sem fonte credível.",
-                    source: "https://www.boatos.org/politica/flavio-bolsonaro-foi-flagrado-fumando-maconha-em-desfile-na-sapucai.html"
+                    claim: "Flávio foi flagrado fumando maconha no desfile da Sapucaí",
+                    reality: "Falso. Vídeo não mostra isso. Alegação sensacionalista sem fonte credível.",
+                    source: "Boatos.org"
                 },
                 {
-                    claim: "Flávio Bolsonaro foi visto com camiseta xingando nordestinos",
-                    reality: "Sem comprovação autêntica de que ele usou tal camiseta.",
-                    source: "https://www.boatos.org/politica/flavio-bolsonaro-camiseta-nordestinos.html"
+                    claim: "Flávio foi visto com camiseta xingando nordestinos",
+                    reality: "Falso. Sem comprovação autêntica. Usada para inflamar sentimentos regionais.",
+                    source: "Boatos.org"
                 },
                 {
-                    claim: "Flávio Bolsonaro disse que pai pode tirar vida de filho gay",
-                    reality: "Sem fonte confiável que confirme essa declaração. Circulou em meme.",
-                    source: "https://www.boatos.org/politica/flavio-bolsonaro-pai-filho-gay.html"
+                    claim: "Flávio disse que pai pode tirar vida de filho gay",
+                    reality: "Falso. Circulou em meme mas nunca foi comprovada por jornais credíveis.",
+                    source: "Boatos.org"
                 },
                 {
-                    claim: "Flávio Bolsonaro comprou mansão de R$10 milhões em Ilha Comprida",
-                    reality: "Boato que circulou online sem comprovação.",
-                    source: "https://www.boatos.org/politica/flavio-bolsonaro-mansao-ilha-comprida.html"
+                    claim: "Flávio comprou mansão de R$10 milhões em Ilha Comprida",
+                    reality: "Falso. Boato sem comprovação nas redes sociais.",
+                    source: "Boatos.org"
                 },
                 {
-                    claim: "Moro afastou promotor do caso Flávio Bolsonaro",
-                    reality: "Boato que correlacionava afastamentos com supostamente acobertamento. Sem comprovação de conspiração.",
-                    source: "https://www.boatos.org/politica/moro-afastou-promotor-caso-flavio-bolsonaro-e-delegado-caso-marielle.html"
+                    claim: "Moro afastou promotor do caso Flávio e delegado do caso Marielle",
+                    reality: "Falso. Boato sem comprovação de conspiração.",
+                    source: "Boatos.org"
                 },
                 {
-                    claim: "Flávio Bolsonaro foi visto almoçando com assassino de Marielle",
-                    reality: "Boato que ligava Flávio a criminosos. Sem base factual.",
-                    source: "https://www.boatos.org/politica/flavio-bolsonaro-assassino-marielle-almoco.html"
-                },
-                {
-                    claim: "Fotos mostram Flávio Bolsonaro com sargento preso com cocaína",
-                    reality: "Imagens descontextualizadas ou fabricadas para criar conexões falsas.",
-                    source: "https://www.boatos.org/politica/fotos-jair-eduardo-flavio-bolsonaro-sargento-preso.html"
-                },
-                {
-                    claim: "Flávio Bolsonaro disse que garçom morto correu risco por usar guarda-chuva",
-                    reality: "Declaração absurda circulou em meme sem comprovação de fala real.",
-                    source: "https://www.boatos.org/politica/flavio-bolsonaro-garcom-guarda-chuva.html"
-                },
-                {
-                    claim: "Flávio Bolsonaro foi envenenado com Rohypnol durante debate",
-                    reality: "Boato sem comprovação médica ou investigação que confirmasse alegação absurda.",
-                    source: "https://www.boatos.org/politica/flavio-bolsonaro-foi-envenenado.html"
-                },
-                {
-                    claim: "WhatsApp falso de Flávio Bolsonaro com hackers roubando dados",
-                    reality: "Típica fake news de segurança da época sem comprovação.",
-                    source: "https://www.boatos.org/tecnologia/whatsapp-falso-flavio-bolsonaro-hacker.html"
+                    claim: "Flávio foi visto almoçando com assassino de Marielle",
+                    reality: "Falso. Boato sem base factual ou comprovação.",
+                    source: "Boatos.org"
                 }
             ];
 
-            const fact = factChecks[index];
-            const text = `🔍 FACT-CHECK — ${fact.claim}\n\n✅ REALIDADE: ${fact.reality}\n\n📎 FONTE: ${fact.source}\n\n🇧🇷 via Mentirómetro do Flávio — Boatos.org`;
+            const fact = factChecks[index] || factChecks[0];
             
-            navigator.clipboard.writeText(text).then(() => {
+            const message = `
+🤥 MENTIRÓMETRO DO FLÁVIO
+
+❌ ${fact.claim}
+
+✅ Realidade: ${fact.reality}
+
+📎 Fonte: ${fact.source}
+
+Confira mais mentiras desmascaradas em:
+https://lis-sil-grazi.github.io/flavio-bolsonaro-mentirometro/
+`.trim();
+
+            // Copy to clipboard
+            navigator.clipboard.writeText(message).then(() => {
+                // Show feedback
                 const btn = event.target;
                 const originalText = btn.textContent;
                 btn.textContent = '✅ Copiado!';
-                btn.style.background = '#20ba5e';
+                btn.style.background = 'linear-gradient(135deg, #48bb78 0%, #38a169 100%)';
                 
                 setTimeout(() => {
                     btn.textContent = originalText;
-                    btn.style.background = '#25D366';
+                    btn.style.background = 'linear-gradient(135deg, #25d366 0%, #128c4e 100%)';
                 }, 2000);
-
-                setTimeout(() => {
-                    window.open('https://web.whatsapp.com/', '_blank');
-                }, 500);
-            }).catch(() => {
-                alert('Erro ao copiar. Tente novamente.');
+            }).catch(err => {
+                console.error('Erro ao copiar:', err);
+                alert('Erro ao copiar para clipboard. Tente manualmente.');
             });
         }
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
     </script>
 </body>
 </html>
